@@ -1,16 +1,9 @@
 import contador from "./contador";
 
-const INCREMENT = {
-  type: "INCREMENT"
-};
-
-const DECREMENT = {
-  type: "DECREMENT"
-};
 
 it("Si action es del tipo incremento ", () => {
-  expect(contador(0, INCREMENT)).toBe(1);
+  expect(contador({number:0}, {type: 'INCREMENTO'})).toEqual({ number: 1});
 });
 it("Si action es del tipo decremento ", () => {
-  expect(contador(0, DECREMENT)).toBe(-1);
+  expect(contador({number:0}, {type: 'DECREMENTO'})).toEqual({ number: -1});
 });
